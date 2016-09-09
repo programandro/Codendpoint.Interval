@@ -9,6 +9,6 @@ namespace Codendpoint.Interval
     {
         public Class1()
         {
-        }
+        } 
     }
 }
