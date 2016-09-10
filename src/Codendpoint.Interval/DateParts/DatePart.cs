@@ -3,19 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Codendpoint.Interval.DatePart
+namespace Codendpoint.Interval.DateParts
 {
     public abstract class DatePart
     {
-        public abstract string Identifier { get; }
+        private string _identifier;
 
-        public abstract int GetValue(DateTime date);
+        public DatePart(string identifier)
+        {
+            _identifier = identifier;
+        }
+
+        public string Identifier
+            => _identifier;
+
+        public abstract string[] PossibleIdentifiers { get; }
+
+        public abstract int? GetValue(DateTime date);
 
         public abstract int GetDomain(DateTime date);
 
         public bool Evaluate(DateTime date, int exact, int frequency, bool reverse)
         {
             var value = GetValue(date);
+            if (!value.HasValue)
+                return false;
+
             if (reverse)
                 value = GetDomain(date) - value + 1;
 
