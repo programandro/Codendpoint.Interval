@@ -14,6 +14,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Codendpoint.Interval", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{25E85B1D-5574-4C49-9C73-08D4F04B48DB}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestX", "test\TestX\TestX.xproj", "{366CC8E2-F91E-4AF4-B717-FFE5272C5384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,11 +26,16 @@ Global
 		{E1A757EA-E7AE-4DFA-AB3E-0CD836970652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1A757EA-E7AE-4DFA-AB3E-0CD836970652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A757EA-E7AE-4DFA-AB3E-0CD836970652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{366CC8E2-F91E-4AF4-B717-FFE5272C5384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366CC8E2-F91E-4AF4-B717-FFE5272C5384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366CC8E2-F91E-4AF4-B717-FFE5272C5384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366CC8E2-F91E-4AF4-B717-FFE5272C5384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E1A757EA-E7AE-4DFA-AB3E-0CD836970652} = {B277C903-EFC9-462A-BABC-4CC7A6912D4D}
+		{366CC8E2-F91E-4AF4-B717-FFE5272C5384} = {25E85B1D-5574-4C49-9C73-08D4F04B48DB}
 	EndGlobalSection
 EndGlobal

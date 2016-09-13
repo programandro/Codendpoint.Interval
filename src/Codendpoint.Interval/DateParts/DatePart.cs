@@ -23,19 +23,23 @@ namespace Codendpoint.Interval.DateParts
 
         public abstract int GetDomain(DateTime date);
 
-        public bool Evaluate(DateTime date, int exact, int frequency, bool reverse)
+        public bool Evaluate(DateTime date, int exact, int frequency)
         {
             var value = GetValue(date);
             if (!value.HasValue)
                 return false;
 
-            if (reverse)
+            var _exact = exact;
+            if (exact < 0)
+            {
                 value = GetDomain(date) - value + 1;
+                _exact = -exact;
+            }
 
             if (frequency == 0)
-                return value == exact;
+                return value == _exact;
 
-            return (value - exact) / frequency > 0 && (value - exact) % frequency == 0;
+            return (value - _exact) / frequency > 0 && (value - _exact) % frequency == 0;
         }
     }
 }
