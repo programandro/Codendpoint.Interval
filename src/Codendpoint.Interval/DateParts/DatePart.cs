@@ -39,7 +39,7 @@ namespace Codendpoint.Interval.DateParts
             if (frequency == 0)
                 return value == _exact;
 
-            return (value - _exact) / frequency > 0 && (value - _exact) % frequency == 0;
+            return (value - _exact) / frequency >= 0 && (value - _exact) % frequency == 0;
         }
     }
 }

@@ -44,7 +44,7 @@ namespace Codendpoint.Interval
             if (index >= statement.Length)
                 return false;
 
-            if (TryStaticPart(statement, ref index, out exact))
+            if (!TryStaticPart(statement, ref index, out exact))
                 exact = 0;
 
             if (!TryFrequencyPart(statement, ref index, out frequency, out part))

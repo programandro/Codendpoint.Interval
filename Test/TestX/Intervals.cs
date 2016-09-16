@@ -31,12 +31,16 @@ namespace TestX
             cases.AddRange(allDays.Where(d => d % 2 != 0).Select(d => new IntervalCase { Date = new DateTime(2000, 1, d), Expected = false, Statement = "d2" }));
             cases.AddRange(allDays.Where(d => d >= 6).Select(d => new IntervalCase { Date = new DateTime(2000, 1, d), Expected = true, Statement = "s6d1" }));
             cases.AddRange(allDays.Where(d => d < 6).Select(d => new IntervalCase { Date = new DateTime(2000, 1, d), Expected = false, Statement = "s6d1" }));
+            cases.AddRange(allDays.Where(d => d >= 16 && (d - 16) % 3 == 0).Select(d => new IntervalCase { Date = new DateTime(2000, 1, d), Expected = true, Statement = "s16d3" }));
+            cases.AddRange(allDays.Where(d => d < 16 || (d - 16) % 3 != 0).Select(d => new IntervalCase { Date = new DateTime(2000, 1, d), Expected = false, Statement = "s16d3" }));
+
+            cases.AddRange(allDays.Select(d => new IntervalCase { Date = new DateTime(2000, 1, d), Expected = true, Statement = "d-1" }));
 
 
 
 
-            foreach (var @case in cases)
-                Assert.True(@case.Expected == manager.Eval(@case.Date, @case.Statement), $"{@case.Statement}({@case.Date.ToShortDateString()})");
+            foreach (var _case in cases)
+                Assert.True(_case.Expected == manager.Eval(_case.Date, _case.Statement), $"{_case.Statement}({_case.Date.ToShortDateString()})");
         }
     }
 }
